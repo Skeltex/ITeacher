@@ -1,0 +1,71 @@
+/* global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(fonts/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: Rubik;
+  font-weight: bold;
+  src: url(fonts/Rubik-Bold.ttf);
+}
+
+body {
+  font-size: 16px;
+  font-family: Rubik, sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 1440px;
+  margin: 2rem auto;
+}
+
+section {
+  margin: 5rem 0;
+}
+
+@media screen and (max-width: 992px) {
+  section {
+    margin: 2rem auto;
+    width: 90%;
+  }
+}
+
+section > h1,
+section > h2 {
+  font-size: xx-large;
+}
+
+:root {
+  --color-text: #0f0f0f;
+  --color-bg: #efefef;
+  --color-navlink: #ccc;
+  --color-navlink-hover: #efefef;
+}
+
+.btn {
+  transition: all 125ms;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  width: max-content;
+  padding: 0.5rem;
+  border: 0.25rem solid var(--color-text);
+  cursor: pointer;
+}
+
+.btn:active {
+  scale: 90%;
+}
+
+.anchor {
+  height: 5.75rem;
+  margin-top: -5.75rem;
+}
