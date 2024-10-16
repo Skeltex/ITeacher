@@ -69,3 +69,255 @@ section > h2 {
   height: 5.75rem;
   margin-top: -5.75rem;
 }
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  color: var(--color-bg);
+  background-color: var(--color-text);
+  box-shadow: 0 0 0.5rem black;
+}
+
+nav > .brand {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: x-large;
+  font-weight: bold;
+  color: var(--color-bg);
+}
+
+nav > .brand > img {
+  width: 1em;
+  filter: invert(100%);
+}
+
+nav .items-wrapper,
+nav .items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav .items a {
+  transition: all 250ms;
+  color: var(--color-navlink);
+}
+
+nav .items a:hover {
+  transition: all 250ms;
+  color: var(--color-navlink-hover);
+}
+
+nav .items.navlinks a {
+  font-size: large;
+}
+
+nav .items.socials a {
+  font-size: x-large;
+}
+
+#nav-toggle {
+  display: none;
+  font-size: x-large;
+}
+
+@media screen and (max-width: 992px) {
+  #nav-toggle {
+    display: inline;
+  }
+
+  nav .items.navlinks {
+    flex-direction: column;
+  }
+
+  nav .items-wrapper {
+    transition: 250ms;
+    flex-direction: column;
+    position: fixed;
+    top: 5.5rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: var(--color-text);
+    box-shadow: 0 0 0.5rem black;
+    padding: 2rem;
+  }
+
+  nav .items-wrapper.hidden {
+    translate: -100vw;
+    opacity: 0;
+  }
+}
+
+/* hero */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.hero > img {
+  height: 20rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  box-shadow: 0.5rem 0.5rem 2rem var(--color-text);
+}
+
+.hero .info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: larger;
+  max-width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero .info {
+    max-width: 80%;
+    font-size: medium;
+  }
+}
+
+/* About me */
+.about-me .about-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 5rem;
+  margin-top: 1rem;
+  width: 80%;
+}
+
+.about-me .about-wrapper .education {
+  width: 50%;
+}
+
+.about-me .about-wrapper article > * {
+  margin-top: 1rem;
+}
+
+.about-me .about-wrapper .education dt {
+  float: left;
+  font-weight: bold;
+}
+
+.about-me .about-wrapper .education dt::after {
+  content: ':';
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+ul.badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+ul.badges li {
+  padding: 0.5rem;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  box-shadow: 0 0 0.5rem black;
+}
+
+@media screen and (max-width: 992px) {
+  .about-me {
+    margin-top: 5rem;
+  }
+
+  .about-me .about-wrapper {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .about-me .about-wrapper .education {
+    width: 100%;
+  }
+
+  ul.badges {
+    gap: 0.5rem;
+  }
+}
+
+/* Projects */
+.projects .projects-wrapper .project > img {
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  box-shadow: 0.5rem 0.5rem 2rem var(--color-text);
+  margin-bottom: 2rem;
+}
+
+.projects .projects-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+.projects .projects-wrapper {
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+.projects .projects-wrapper .project {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 992px) {
+  .projects .projects-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* Contacts */
+#contact-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 512px;
+  width: 100%;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: .75rem;
+  border: 3px solid var(--color-text);
+}
+
+#contact-form textarea {
+  resize: none;
+  height: 7.5em;
+}
+
+#contact-form .btn-group {
+  display: flex;
+  gap: 1rem;
+}
+
+/* footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  padding: 2rem;
+  box-shadow: -.5rem -.5rem 2rem var(--color-text);
+}

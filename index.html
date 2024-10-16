@@ -12,29 +12,155 @@
   </head>
   <body>
     <nav>
-      
+      <a href="#" class="brand">
+        <img src="images/favicon.svg" alt="Logo" />
+        Сайт-портфолио
+      </a>
+
+      <div class="items-wrapper hidden">
+        <ul class="items navlinks">
+          <li><a href="#about-me">Обо мне</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+
+        <ul class="items socials">
+          <li>
+            <a href="https://t.me/im_robertproducts" target="_blank">
+              <i class="bi bi-telegram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/tolstovr" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <button id="nav-toggle" data-active="false">
+        <i class="bi bi-list"></i>
+      </button>
     </nav>
 
     <main>
       <header class="hero">
-        
+        <img src="images/avatar.webp" alt="My avatar" />
+        <div class="info">
+          <div class="title">
+            <h1>Роберт Толстов</h1>
+            <h2>Frontend-разработчик</h2>
+          </div>
+          <p>
+            Привет, меня зовут Роберт и я Frontend-разработчик. Добро пожаловать на мой сайт. Здесь вы можете посмотреть
+            мои работы или связаться со мной.
+          </p>
+          <a href="#projects" class="btn bi bi-arrow-down">Перейти к проектам</a>
+        </div>
       </header>
 
+      <div id="about-me" class="anchor"></div>
       <section class="about-me">
-        
+        <h1>Обо мне</h1>
+
+        <div class="about-wrapper">
+          <article class="education">
+            <h2>Образование</h2>
+            <dl>
+              <dt>Среднее</dt>
+              <dd>Лицей-интернат 64, с отличием</dd>
+              <dt>Высшее</dt>
+              <dd>СГУ им. Чернышевского, Программная инженерия, 2 курс</dd>
+            </dl>
+          </article>
+
+          <article class="skills">
+            <h2>Навыки</h2>
+            <ul class="badges">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>Go</li>
+              <li>Rust</li>
+              <li>React</li>
+              <li>Lua</li>
+              <li>Docker</li>
+              <li>Git</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
+      <div id="projects" class="anchor"></div>
       <section class="projects">
-        
+        <h1>Проекты</h1>
+
+        <div class="projects-wrapper">
+          <article class="project">
+            <img src="images/project.webp" alt="InBrief" />
+            <h2>Интересный пет-проект</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam laudantium impedit quo quae quis expedita nobis ab repellendus minus maiores nulla ratione dolor, sit ullam aliquam tempora, nihil voluptas harum?</p>
+            <ul class="badges">
+              <li>Python</li>
+              <li>Docker</li>
+              <li>Just</li>
+            </ul>
+            <a href="#" class="btn bi bi-box-arrow-up-right">Подробнее</a>
+          </article>
+
+          <article class="project">
+            <img src="images/project.webp" alt="InBrief" />
+            <h2>Незаконченный пет-проект</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam laudantium impedit quo quae quis expedita nobis ab repellendus minus maiores nulla ratione dolor, sit ullam aliquam tempora, nihil voluptas harum?</p>
+            <ul class="badges">
+              <li>Svelte</li>
+              <li>TailwindCSS</li>
+              <li>TypeScript</li>
+              <li>ShadCN-UI</li>
+            </ul>
+            <a href="#" class="btn bi bi-box-arrow-up-right">Подробнее</a>
+          </article>
+
+          <article class="project">
+            <img src="images/project.webp" alt="InBrief" />
+            <h2>Проект по гайду с Youtube</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam laudantium impedit quo quae quis expedita nobis ab repellendus minus maiores nulla ratione dolor, sit ullam aliquam tempora, nihil voluptas harum?</p>
+            <ul class="badges">
+              <li>React</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>SCSS</li>
+              <li>Docker</li>
+            </ul>
+            <a href="#" class="btn bi bi-box-arrow-up-right">Подробнее</a>
+          </article>
+        </div>
       </section>
 
+      <div id="contacts" class="anchor"></div>
       <section class="contacts">
+        <h1>Связаться со мной</h1>
         
+        <div class="form-wrapper">
+          <form action="/submit-form" method="POST" id="contact-form">
+            <input type="text" name="name" placeholder="Имя" maxlength="100" minlength="1" required />
+            <input type="email" name="email" placeholder="E-mail" maxlength="200" minlength="3" required />
+            <textarea name="message" placeholder="Сообщение" maxlength="1000" minlength="10" required></textarea>
+
+            <div class="btn-group">
+              <button class="btn bi bi-send" type="submit">Отправить</button>
+              <a class="btn bi bi-telegram"></a>
+              <a class="btn bi bi-linkedin"></a>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
 
     <footer>
-     
+      <p>2024 Роберт Толстов. Все права защищены.</p>
+      <p>Сделано с <i class="bi bi-heart-fill"></i></p>
     </footer>
 
     <script src="app.js"></script>
