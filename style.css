@@ -1,323 +1,196 @@
 /* global styles */
+
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    /*Настройки скроллбара*/
+    scrollbar-width: thin;
+    scrollbar-color: #0000005a #ffffff00;
 }
-
-@font-face {
-  font-family: Rubik;
-  src: url(fonts/Rubik-Regular.ttf);
-}
-
-@font-face {
-  font-family: Rubik;
-  font-weight: bold;
-  src: url(fonts/Rubik-Bold.ttf);
-}
-
-body {
-  font-size: 16px;
-  font-family: Rubik, sans-serif;
-}
-
-main {
-  width: 100%;
-  max-width: 1440px;
-  margin: 2rem auto;
-}
-
-section {
-  margin: 5rem 0;
-}
-
-@media screen and (max-width: 992px) {
-  section {
-    margin: 2rem auto;
-    width: 90%;
-  }
-}
-
-section > h1,
-section > h2 {
-  font-size: xx-large;
-}
-
-:root {
-  --color-text: #0f0f0f;
-  --color-bg: #efefef;
-  --color-navlink: #ccc;
-  --color-navlink-hover: #efefef;
-}
-
-.btn {
-  transition: all 125ms;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--color-text);
-  color: var(--color-bg);
-  width: max-content;
-  padding: 0.5rem;
-  border: 0.25rem solid var(--color-text);
-  cursor: pointer;
-}
-
-.btn:active {
-  scale: 90%;
-}
-
+    /*Якорь будет чуть ниже листать*/
 .anchor {
-  height: 5.75rem;
-  margin-top: -5.75rem;
+    height: 3rem;
+    margin-top: 3rem;
 }
 
-/* navbar */
+@font-face {
+    font-family: Roboto Mono;
+    src: url(fonts/RobotoMono.ttf);
+}
+
+body{
+    font-family: "Roboto Mono", monospace;
+    font-size: large;
+}
+
+h1 {
+    font-size: xx-large;
+}
+section {
+    width: 100rem;
+    max-width: 85%;
+    margin: 2rem auto;
+}
+a:hover {
+    transition: all 250ms;
+    color: #e66465;
+}
+a {
+    transition: all 250ms;
+    color: #1f1f1f;
+}
+
+/*Navbar*/
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 1rem;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-
-  color: var(--color-bg);
-  background-color: var(--color-text);
-  box-shadow: 0 0 0.5rem black;
-}
-
-nav > .brand {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  font-size: x-large;
-  font-weight: bold;
-  color: var(--color-bg);
-}
-
-nav > .brand > img {
-  width: 1em;
-  filter: invert(100%);
-}
-
-nav .items-wrapper,
-nav .items {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-nav .items a {
-  transition: all 250ms;
-  color: var(--color-navlink);
-}
-
-nav .items a:hover {
-  transition: all 250ms;
-  color: var(--color-navlink-hover);
-}
-
-nav .items.navlinks a {
-  font-size: large;
-}
-
-nav .items.socials a {
-  font-size: x-large;
-}
-
-#nav-toggle {
-  display: none;
-  font-size: x-large;
-}
-
-@media screen and (max-width: 992px) {
-  #nav-toggle {
-    display: inline;
-  }
-
-  nav .items.navlinks {
-    flex-direction: column;
-  }
-
-  nav .items-wrapper {
-    transition: 250ms;
-    flex-direction: column;
-    position: fixed;
-    top: 5.5rem;
-    left: 1rem;
-    right: 1rem;
-    background-color: var(--color-text);
+    display: flex;
+    justify-content: space-around;
+    padding: .8rem;
+    position: sticky;
+    top: 0;
+    z-index: 10 ;
+  
+    color: #efefef;
+    background: linear-gradient(#1f1f1f, #161616);
     box-shadow: 0 0 0.5rem black;
-    padding: 2rem;
-  }
-
-  nav .items-wrapper.hidden {
-    translate: -100vw;
-    opacity: 0;
-  }
+    font-size: x-large; 
+}
+nav > .brand {
+    display: flex;
+    align-items: center;
+    gap: .7em;   
+    
+    font-size: 2rem; 
+    font-weight: bold;
+    color: #efefef;
+}
+nav > .brand > img {
+    width: 1em;
+    filter: invert(100%);
+}
+nav > .navlinks {
+    color: #efefef;
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    font-size: large;
+}
+nav > .navlinks a {
+    transition: all 250ms;
+    color: #e6e6e6;
+}
+nav > .navlinks a:hover {
+    transition: all 250ms;
+    color: #e66465;
+}
+    /*Когда экран узкий, ссылки отображатся в столбец 
+    (думаю, временное решение)*/
+@media screen and (max-width: 770px){
+    nav > .navlinks {
+        flex-direction: column;
+        gap: .5rem;  
+    }
 }
 
-/* hero */
-.hero {
-  display: flex;
-  align-items: center;
-  gap: 5rem;
+/*Header*/
+    /*Картинка с ноутом */
+#image-bg {
+    display: flex;
+    opacity: .6;
+    width: 100%;
+    height: 23rem;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 0 0 2rem 2rem;
 }
-
-.hero > img {
-  height: 20rem;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  box-shadow: 0.5rem 0.5rem 2rem var(--color-text);
+.head {
+    border-radius: 0 0 2rem 2rem;
+    background: linear-gradient(hsla(152, 100%, 22%, 0.869) , hsla(186, 100%, 21%, 0.829) );
+    /*Расположение текста на ней*/
+    position: relative;
+    text-align: center;
+    color: #efefef;     
 }
+.image-text {
+    /*Смещение теста на картинку*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-.hero .info {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  font-size: larger;
-  max-width: 50%;
-}
-
-@media screen and (max-width: 992px) {
-  .hero {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .hero .info {
-    max-width: 80%;
-    font-size: medium;
-  }
-}
-
-/* About me */
-.about-me .about-wrapper {
-  display: flex;
-  align-items: stretch;
-  gap: 5rem;
-  margin-top: 1rem;
-  width: 80%;
-}
-
-.about-me .about-wrapper .education {
-  width: 50%;
-}
-
-.about-me .about-wrapper article > * {
-  margin-top: 1rem;
-}
-
-.about-me .about-wrapper .education dt {
-  float: left;
-  font-weight: bold;
-}
-
-.about-me .about-wrapper .education dt::after {
-  content: ':';
-  margin-right: 0.5rem;
-  font-weight: bold;
-}
-
-ul.badges {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-ul.badges li {
-  padding: 0.5rem;
-  background-color: var(--color-text);
-  color: var(--color-bg);
-  box-shadow: 0 0 0.5rem black;
-}
-
-@media screen and (max-width: 992px) {
-  .about-me {
-    margin-top: 5rem;
-  }
-
-  .about-me .about-wrapper {
+    font-size: xx-large;
+    text-shadow: 0 0 1rem #000000;
+    display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 2rem;
-  }
-
-  .about-me .about-wrapper .education {
-    width: 100%;
-  }
-
-  ul.badges {
-    gap: 0.5rem;
-  }
+    height: 15rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.image-text > .title{
+    font-weight: bold;
+}
+.image-text > .subtitle{
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+.image-text > .button{
+    background-color: #e6e6e6;
+    text-shadow: 0 0 0;
+    padding-inline: 2rem;
+    font-weight: light;
+    letter-spacing: .08em;
+    font-family: "Roboto Mono", monospace;
+    border-radius: .7rem;
+    
 }
 
-/* Projects */
-.projects .projects-wrapper .project > img {
-  width: 100%;
-  aspect-ratio: 2/1;
-  object-fit: cover;
-  box-shadow: 0.5rem 0.5rem 2rem var(--color-text);
-  margin-bottom: 2rem;
+/* Teachers */
+
+.teacher > img {
+    aspect-ratio: 1;
+    border-radius: .7rem;
+    object-fit: cover;
+    box-shadow: .2rem .2rem .4rem rgba(0, 0, 0, 0.624);
+    margin-bottom: .5%;
+}
+  
+.teachers .teachers-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 5%;
+    margin-top: 2rem;
 }
 
-.projects .projects-wrapper {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-evenly;
-}
-
-.projects .projects-wrapper {
-  gap: 5rem;
-  margin-top: 2rem;
-}
-
-.projects .projects-wrapper .project {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-@media screen and (max-width: 992px) {
-  .projects .projects-wrapper {
+.teachers .teachers-wrapper .teacher {
+    display: flex;
     flex-direction: column;
-  }
+    align-items: flex-start;
+    gap: 1rem;
+    justify-content: space-between;
 }
 
-/* Contacts */
-#contact-form {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 512px;
-  width: 100%;
+.badge {
+    padding: .5rem;
+    background-color: #363636;
+    color: #e6e6e6;
+    box-shadow: .2rem .2rem .4rem black;
+    padding-inline: 2rem;
+    border-radius: .7rem;
 }
-
-#contact-form input,
-#contact-form textarea {
-  padding: .75rem;
-  border: 3px solid var(--color-text);
+/*Изменение числа столбцов сетки 
+в зависимости от ширины экрана*/
+@media screen and (max-width: 1460px){
+    .teachers .teachers-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
-
-#contact-form textarea {
-  resize: none;
-  height: 7.5em;
+@media screen and (max-width: 1097px){
+    .teachers .teachers-wrapper {
+        grid-template-columns: repeat(3 , 1fr);
+    }
 }
-
-#contact-form .btn-group {
-  display: flex;
-  gap: 1rem;
-}
-
-/* footer */
-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: var(--color-text);
-  color: var(--color-bg);
-  padding: 2rem;
-  box-shadow: -.5rem -.5rem 2rem var(--color-text);
+@media screen and (max-width: 800px){
+    .teachers .teachers-wrapper {
+        grid-template-columns: repeat(2 , 1fr);
+    }
 }
