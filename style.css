@@ -2,11 +2,12 @@
 
 html {
     scroll-behavior: smooth;
-    /*Настройки скроллбара*/
+    /* Scrollbar settings */
     scrollbar-width: thin;
     scrollbar-color: #0000005a #ffffff00;
 }
-    /*Якорь будет чуть ниже листать*/
+
+/* The anchor will scroll a little lower */
 .anchor {
     height: 3rem;
     margin-top: 3rem;
@@ -17,7 +18,7 @@ html {
     src: url(fonts/RobotoMono.ttf);
 }
 
-body{
+body {
     font-family: "Roboto Mono", monospace;
     font-size: large;
 }
@@ -25,73 +26,80 @@ body{
 h1 {
     font-size: xx-large;
 }
+
 section {
     width: 100rem;
     max-width: 85%;
     margin: 2rem auto;
 }
+
 a:hover {
     transition: all 250ms;
     color: #e66465;
 }
+
 a {
     transition: all 250ms;
     color: #1f1f1f;
 }
 
-/*Navbar*/
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-around;
     padding: .8rem;
     position: sticky;
     top: 0;
-    z-index: 10 ;
-  
+    z-index: 10;
+
     color: #efefef;
     background: linear-gradient(#1f1f1f, #161616);
     box-shadow: 0 0 0.5rem black;
-    font-size: x-large; 
+    font-size: x-large;
 }
-nav > .brand {
+
+nav>.brand {
     display: flex;
     align-items: center;
-    gap: .7em;   
-    
-    font-size: 2rem; 
+    gap: .7em;
+
+    font-size: 2rem;
     font-weight: bold;
     color: #efefef;
 }
-nav > .brand > img {
+
+nav>.brand>img {
     width: 1em;
     filter: invert(100%);
 }
-nav > .navlinks {
+
+nav>.navlinks {
     color: #efefef;
     display: flex;
     align-items: center;
     gap: 4vw;
     font-size: large;
 }
-nav > .navlinks a {
+
+nav>.navlinks a {
     transition: all 250ms;
     color: #e6e6e6;
 }
-nav > .navlinks a:hover {
+
+nav>.navlinks a:hover {
     transition: all 250ms;
     color: #e66465;
 }
-    /*Когда экран узкий, ссылки отображатся в столбец 
-    (думаю, временное решение)*/
-@media screen and (max-width: 770px){
-    nav > .navlinks {
+
+/* When the screen is narrow, the links are displayed in a column. */
+@media screen and (max-width: 770px) {
+    nav>.navlinks {
         flex-direction: column;
-        gap: .5rem;  
+        gap: .5rem;
     }
 }
 
-/*Header*/
-    /*Картинка с ноутом */
+/* Header */
 #image-bg {
     display: flex;
     opacity: .6;
@@ -101,16 +109,18 @@ nav > .navlinks a:hover {
     object-fit: cover;
     border-radius: 0 0 2rem 2rem;
 }
+
 .head {
     border-radius: 0 0 2rem 2rem;
-    background: linear-gradient(hsla(152, 100%, 22%, 0.869) , hsla(186, 100%, 21%, 0.829) );
-    /*Расположение текста на ней*/
+    background: linear-gradient(hsla(152, 100%, 22%, 0.869), hsla(186, 100%, 21%, 0.829));
+    /* Text layout */
     position: relative;
     text-align: center;
-    color: #efefef;     
+    color: #efefef;
 }
+
 .image-text {
-    /*Смещение теста на картинку*/
+    /* Shift text to image */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -125,14 +135,17 @@ nav > .navlinks a:hover {
     justify-content: space-between;
     align-items: center;
 }
-.image-text > .title{
+
+.image-text>.title {
     font-weight: bold;
 }
-.image-text > .subtitle{
+
+.image-text>.subtitle {
     font-weight: 300;
     font-size: 1.6rem;
 }
-.image-text > .button{
+
+.image-text>.button {
     background-color: #e6e6e6;
     text-shadow: 0 0 0;
     padding-inline: 2rem;
@@ -140,19 +153,19 @@ nav > .navlinks a:hover {
     letter-spacing: .08em;
     font-family: "Roboto Mono", monospace;
     border-radius: .7rem;
-    
+
 }
 
 /* Teachers */
 
-.teacher > img {
+.teacher>img {
     aspect-ratio: 1;
     border-radius: .7rem;
     object-fit: cover;
     box-shadow: .2rem .2rem .4rem rgba(0, 0, 0, 0.624);
     margin-bottom: .5%;
 }
-  
+
 .teachers .teachers-wrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -177,20 +190,22 @@ nav > .navlinks a:hover {
     padding-inline: 2rem;
     border-radius: .7rem;
 }
-/*Изменение числа столбцов сетки 
-в зависимости от ширины экрана*/
-@media screen and (max-width: 1460px){
+
+/* Changing the number of grid columns depending on the screen width */
+@media screen and (max-width: 1460px) {
     .teachers .teachers-wrapper {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-@media screen and (max-width: 1097px){
+
+@media screen and (max-width: 1097px) {
     .teachers .teachers-wrapper {
-        grid-template-columns: repeat(3 , 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-@media screen and (max-width: 800px){
+
+@media screen and (max-width: 800px) {
     .teachers .teachers-wrapper {
-        grid-template-columns: repeat(2 , 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
