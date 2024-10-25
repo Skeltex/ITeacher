@@ -110,11 +110,32 @@
           <a class="badge">Подробнее</a>
         </article>
       </div>
+
     </section>
-    <div id="contacts" class="anchor"></div>
+    <div id="feedback" class="anchor"></div>
     <section class="feedback">
       <h1>Связь</h1>
       <p>Оставьте форму для обратной связи</p>
+      <form class="feedback-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Почта:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="course">Выберите желаемый курс:</label>
+        <select id="course" name="course" required>
+          <option value="web-development">Веб-разработка</option>
+          <option value="data-science">Наука о данных</option>
+          <option value="ai">Искусственный интеллект</option>
+          <option value="mobile-dev">Мобильная разработка</option>
+        </select>
+
+        <button type="submit">Отправить</button>
+      </form>
     </section>
 
     <section class="contacts">
@@ -123,8 +144,9 @@
       <p>8(800)123-45-67</p>
     </section>
 
-    <footer>
-
+    <footer class="site-footer">
+      <p>&copy; 2023 ITeacher. Все права защищены.</p>
+      <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
     </footer>
 
     <script src="app.js"></script>
