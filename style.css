@@ -8,10 +8,15 @@ html {
   background-image: url("images/fon3.png");
 }
 
-
 /* The anchor will scroll a little lower */
-.anchor {
-  height: 3rem;
+body, html {
+  scroll-padding-top: 5rem;
+}
+/* A more lower !!!!!!!!!!! delete when adding js to navbar */
+@media screen and (max-width: 770px) {
+  body, html {
+    scroll-padding-top: 9rem;
+  }
 }
 
 @font-face {
@@ -53,7 +58,7 @@ a {
 nav {
   display: flex;
   justify-content: space-around;
-  padding: .8rem;
+  padding: .6rem;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -162,7 +167,7 @@ nav>.navlinks a:hover {
   padding-inline: 2rem;
   font-weight: light;
   letter-spacing: .08em;
-  font-family: "Roboto Mono", monospace;
+  font-family: "RobotoMono", monospace;
   border-radius: .7rem;
 }
 /*Smaller font for mobiles*/
@@ -208,22 +213,33 @@ nav>.navlinks a:hover {
 .teachers .teachers-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  height: 100%;
-  gap: 4%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .teachers .teachers-wrapper .teacher {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
   justify-content: space-between;
-  width: 15rem;
-  height: 25rem;
-  margin-top: 1.5rem;
+  width: 12rem;
+  height: 22rem;
+  gap: .2rem;
 }
+@media screen and (max-width: 1700px) {
+  .teachers .teachers-wrapper {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .teachers .teachers-wrapper .teacher {
+    height: 24rem;
+    width: 15.89rem;
+  }
+}
+
   
 .badge {
   padding: .5rem;
