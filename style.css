@@ -9,12 +9,16 @@ html {
 }
 
 /* The anchor will scroll a little lower */
-body, html {
+body,
+html {
   scroll-padding-top: 5rem;
 }
+
 /* A more lower !!!!!!!!!!! delete when adding js to navbar */
 @media screen and (max-width: 770px) {
-  body, html {
+
+  body,
+  html {
     scroll-padding-top: 9rem;
   }
 }
@@ -31,6 +35,7 @@ body {
 h1 {
   font-size: xx-large;
 }
+
 /*Smaller font for mobiles*/
 @media screen and (max-width: 770px) {
   h1 {
@@ -109,6 +114,7 @@ nav>.navlinks a:hover {
     gap: .5rem;
     font-size: 1rem;
   }
+
   nav>.brand {
     font-size: 1.5rem;
   }
@@ -170,33 +176,39 @@ nav>.navlinks a:hover {
   font-family: "RobotoMono", monospace;
   border-radius: .7rem;
 }
+
 /*Smaller font for mobiles*/
 @media screen and (max-width: 770px) {
   .image-text {
     font-size: x-large;
   }
+
   .image-text>.title {
     font-size: x-large;
   }
+
   .image-text>.subtitle {
     font-size: x-large;
   }
 }
+
 /*About us, advantages*/
-.articles{
+.articles {
   font-size: 20px;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.advantages ol{
+.advantages ol {
   padding-left: 0;
   margin-left: 30px;
 }
+
 /*Smaller font for mobiles*/
 @media screen and (max-width: 770px) {
-  .articles{
-    font-size: 18px;;
+  .articles {
+    font-size: 18px;
+    ;
   }
 }
 
@@ -228,19 +240,20 @@ nav>.navlinks a:hover {
   height: 22rem;
   gap: .2rem;
 }
+
 @media screen and (max-width: 1700px) {
   .teachers .teachers-wrapper {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
-  
+
   .teachers .teachers-wrapper .teacher {
     height: 24rem;
     width: 15.89rem;
   }
 }
 
-  
+
 .badge {
   padding: .5rem;
   background-color: #363636;
@@ -259,7 +272,7 @@ nav>.navlinks a:hover {
   border-radius: .7rem;
   background-color: #f9f9f9;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-block: 20px; 
+  margin-block: 20px;
   /* Убираем auto */
 }
 
@@ -324,13 +337,15 @@ footer a {
   text-decoration: none;
   transition: color 250ms;
 }
-footer p{
+
+footer p {
   margin-bottom: 1.5rem;
 }
 
 footer a:hover {
   color: #007BFF;
 }
+
 /*Smaller font for mobiles*/
 @media screen and (max-width: 770px) {
   footer {
