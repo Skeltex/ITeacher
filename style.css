@@ -5,7 +5,9 @@ html {
   /* Scrollbar settings */
   scrollbar-width: thin;
   scrollbar-color: #0000005a #ffffff00;
+  background-image: url("images/fon3.png");
 }
+
 
 /* The anchor will scroll a little lower */
 .anchor {
