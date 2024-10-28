@@ -86,7 +86,7 @@ nav>.brand {
 
 nav>.brand>img {
   width: 1em;
-  filter: invert(100%);
+  filter: brightness(180%);
 }
 
 nav>.navlinks {
@@ -328,7 +328,7 @@ footer {
   text-align: left;
   bottom: 0;
   width: 100%;
-  height: 7rem;
+  height: auto;
   position: relative;
 }
 
