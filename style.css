@@ -371,7 +371,7 @@ footer a:hover {
 
 #scrollToTopBtn {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
     display: none;
     /* Hidden by default */
@@ -391,4 +391,55 @@ footer a:hover {
     background: linear-gradient(135deg, hsl(152, 100%, 30%), hsl(186, 100%, 30%));
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.theme-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px; /* Размер кнопки */
+    height: 50px; /* Размер кнопки */
+    border: none;
+    border-radius: 50%; /* Делает кнопку круглой */
+    background: linear-gradient(45deg, #007BFF, #00CFFF); /* Градиент */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Добавлено для эффекта */
+    font-size: 20px;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1); /* Увеличивает кнопку при наведении */
 }
