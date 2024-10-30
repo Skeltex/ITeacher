@@ -1,0 +1,37 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+	<title>fon3</title>
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-200,200,0,100,200)">
+			<stop offset="0" stop-color="#ebebeb"/>
+			<stop offset="1" stop-color="#f5f5f5"/>
+		</linearGradient>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-200,200,0,200,100)">
+			<stop offset="0" stop-color="#ebebeb"/>
+			<stop offset="1" stop-color="#f5f5f5"/>
+		</linearGradient>
+		<linearGradient id="g3" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-200,200,0,0,100)">
+			<stop offset="0" stop-color="#ebebeb"/>
+			<stop offset="1" stop-color="#f5f5f5"/>
+		</linearGradient>
+		<linearGradient id="g4" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-200,200,0,0,300)">
+			<stop offset="0" stop-color="#ebebeb"/>
+			<stop offset="1" stop-color="#f5f5f5"/>
+		</linearGradient>
+		<linearGradient id="g5" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-200,200,0,200,300)">
+			<stop offset="0" stop-color="#ebebeb"/>
+			<stop offset="1" stop-color="#f5f5f5"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1);stroke: #ffffff;stroke-miterlimit:100 } 
+		.s1 { fill: url(#g2);stroke: #ffffff;stroke-miterlimit:100 } 
+		.s2 { fill: url(#g3);stroke: #ffffff;stroke-miterlimit:100 } 
+		.s3 { fill: url(#g4);stroke: #ffffff;stroke-miterlimit:100 } 
+		.s4 { fill: url(#g5);stroke: #ffffff;stroke-miterlimit:100 } 
+	</style>
+	<path id="форма 1" class="s0" d="m100 200l-100-100 100-100 100 100z"/>
+	<path id="форма 1 copy" class="s1" d="m200 100l-100-100 100-100 100 100z"/>
+	<path id="форма 1 copy 2" class="s2" d="m0 100l-100-100 100-100 100 100z"/>
+	<path id="форма 1 copy 3" class="s3" d="m0 300l-100-100 100-100 100 100z"/>
+	<path id="форма 1 copy 4" class="s4" d="m200 300l-100-100 100-100 100 100z"/>
+</svg>
