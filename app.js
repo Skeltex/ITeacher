@@ -1,8 +1,9 @@
 const button = document.getElementById("scrollToTopBtn");
 const buttonStyle = button.style;
-let buttonX = 0, buttonY = 0;
+let buttonX = 0,
+    buttonY = 0;
 
-function buttonTrans(){
+function buttonTrans() {
     buttonStyle.transform = `translate(${buttonX}rem, ${buttonY}rem)`;
 }
 
@@ -23,7 +24,7 @@ function btnUp(x) {
     buttonTrans()
 }
 // Down when mouse isn't on button
-  function btnDown(x) {
+function btnDown(x) {
     buttonY = 0
     buttonTrans()
 }

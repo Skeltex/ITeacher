@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <button id="scrollToTopBtn" onclick="scrollToTop()" onmouseover="btnUp(this)" onmouseout="btnDown(this)">↑</button>
     <nav>
+        <button id="scrollToTopBtn" onclick="scrollToTop()" onmouseover="btnUp(this)" onmouseout="btnDown(this)">↑</button>
         <a href="#" class="brand">
             <img src="images/logo.svg" alt="Logo" /> ITeacher
         </a>
@@ -27,7 +27,7 @@
     <main>
         <header>
             <div class="head">
-                <img id="image-bg" src="images/background.jpg" alt="Background">
+                <img id="image-bg" src="images/header_image.jpg" alt="Header">
                 <div class="image-text">
                     <div class="title">
                         <p>Онлайн-школа</p>
@@ -72,49 +72,75 @@
             <h1>Преподаватели</h1>
             <div class="teachers-wrapper">
                 <article class="teacher">
-                    <img src="images/Backendov.jpg" alt="Teacher" />
+                    <img src="images/Backendov.jpg" alt="Ф.С.Бэкендов" />
                     <h2>Ф.С.Бэкендов</h2>
                     <p>Преподаватель frontend-разработки</p>
                     <a class="badge">Подробнее</a>
                 </article>
 
                 <article class="teacher">
-                    <img src="images/Kovaleva.jpg" alt="Teacher" />
+                    <img src="images/Kovaleva.jpg" alt="К.Е.Ковалёва" />
                     <h2>К.Е.Ковалёва</h2>
                     <p>Преподаватель Python</p>
                     <a class="badge">Подробнее</a>
                 </article>
 
                 <article class="teacher">
-                    <img src="images/Stepanov.jpg" alt="Teacher" />
+                    <img src="images/Stepanov.jpg" alt="С.У.Степанов" />
                     <h2>С.У.Степанов</h2>
                     <p>Преподаватель Java</p>
                     <a class="badge">Подробнее</a>
                 </article>
 
                 <article class="teacher">
-                    <img src="images/Semenov.jpg" alt="Teacher" />
+                    <img src="images/Semenov.jpg" alt="C.А.Семёнов" />
                     <h2>C.А.Семёнов</h2>
                     <p>Преподаватель Data Science</p>
                     <a class="badge">Подробнее</a>
                 </article>
 
                 <article class="teacher">
-                    <img src="images/Morozova.jpg" alt="Teacher" />
+                    <img src="images/Morozova.jpg" alt="М.Е.Морозова" />
                     <h2>М.Е.Морозова</h2>
                     <p>Преподаватель ИИ и машинного обучения</p>
                     <a class="badge">Подробнее</a>
                 </article>
 
                 <article class="teacher">
-                    <img src="images/Romanov.jpg" alt="Teacher" />
+                    <img src="images/Romanov.jpg" alt="Х.Е.Романов" />
                     <h2>Х.Е.Романов</h2>
                     <p>Преподаватель мобильной разработки</p>
                     <a class="badge">Подробнее</a>
                 </article>
             </div>
-
         </section>
+
+
+
+        <section class="reviews" id="reviews">
+            <h1>Отзывы студентов</h1>
+            <div class="review-container">
+                <div class="review-card">
+                    <p class="review-text">"Обучение в ITeacher дало мне уверенность в своих силах и помогло найти работу!"</p>
+                    <p class="review-author">Анна К.</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"Прекрасные преподаватели и доступные материалы. Рекомендую!"</p>
+                    <p class="review-author">Иван П.</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"Курс был исчерпывающим, и я успел пройти все, что нужно для начала карьеры."</p>
+                    <p class="review-author">Мария С.</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"Отличная подача материала и большое количество практических заданий!"</p>
+                    <p class="review-author">Сергей Л.</p>
+                </div>
+            </div>
+        </section>
+
+
+
         <div id="feedback" class="anchor"></div>
         <section class="feedback">
             <h1>Связь</h1>
