@@ -38,12 +38,19 @@ h1 {
     font-size: xx-large;
 }
 
+h2 {
+    font-size: x-large;
+}
+
 
 /*Smaller font for mobiles*/
 
 @media screen and (max-width: 770px) {
     h1 {
         font-size: x-large;
+    }
+    h2 {
+        font-size: 1.3rem;
     }
 }
 
@@ -110,7 +117,6 @@ nav>.navlinks a:hover {
     transition: all 250ms;
     color: #e66465;
 }
-
 
 /* When the screen is narrow, the links are displayed in a column, smaller font for mobiles */
 
@@ -183,7 +189,6 @@ nav>.navlinks a:hover {
     border-radius: .7rem;
 }
 
-
 /*Smaller font for mobiles*/
 
 @media screen and (max-width: 770px) {
@@ -209,9 +214,8 @@ nav>.navlinks a:hover {
 
 .advantages ol {
     padding-left: 0;
-    margin-left: 30px;
+    margin-left: 35px;
 }
-
 
 /*Smaller font for mobiles*/
 
@@ -267,36 +271,84 @@ nav>.navlinks a:hover {
     padding: .5rem;
     background-color: #363636;
     color: #e6e6e6;
-    box-shadow: .2rem .2rem .4rem black;
+    filter: drop-shadow(.1rem .1rem .15rem #0000009f);
     width: 50%;
     text-align: center;
     border-radius: .7rem;
 }
 
 
+/* Rewiews */
+
+.reviews {
+    padding: 2rem;
+    text-align: center;
+}
+
+.reviews h1 {
+    margin-bottom: 2rem;
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.review-card {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border-radius: .7rem;
+    filter: drop-shadow(.2rem .2rem .2rem #00000044);
+    padding: 1.2rem;
+    max-width: 20rem;
+    min-width: 10rem;
+    transition: transform .2s;
+    color: #efefef;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+.review-text {
+    margin-bottom: 1rem;
+}
+
+.review-author {
+    font-weight: bold;
+}
+
+
 /* Feedback form */
 
 .feedback-form {
-    max-width: 500px;
-    padding: 20px;
+    max-width: 30rem;
+    padding: 1rem;
     border-radius: .7rem;
     background-color: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-block: 20px;
+    filter: drop-shadow(.2rem .2rem .2rem #0000002d)
     /* Убираем auto */
 }
 
 .feedback-form label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: .8rem;
     font-weight: bold;
 }
 
 .feedback-form input,
 .feedback-form select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: .7rem;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: .7rem;
     transition: border-color 250ms;
@@ -310,13 +362,11 @@ nav>.navlinks a:hover {
 
 .feedback-form button {
     width: 100%;
-    padding: 10px;
+    padding: .7rem;
     color: #fff;
     background-color: #006aff;
     border: none;
     border-radius: .7rem;
-    font-size: 16px;
-    cursor: pointer;
     transition: background-color 250ms;
 }
 
@@ -337,7 +387,7 @@ nav>.navlinks a:hover {
 footer {
     background-color: #1f1f1f;
     color: #fff;
-    padding: 15px 20px;
+    padding: 1rem 2rem;
     text-align: left;
     bottom: 0;
     width: 100%;
@@ -359,7 +409,6 @@ footer a:hover {
     color: #007BFF;
 }
 
-
 /* Smaller font for mobiles */
 
 @media screen and (max-width: 770px) {
@@ -373,16 +422,16 @@ footer a:hover {
 
 #scrollToTopBtn {
     position: fixed;
-    bottom: 20px;
+    bottom: 1.5rem;
     right: -4rem;
     /* Hidden by default */
     background: linear-gradient(135deg, #00cc6d, #00b8cc);
     color: white;
     border: none;
-    border-radius: 50px;
+    border-radius: 2rem;
     padding: 15px 22.05px;
     font-size: 18px;
-    box-shadow: 0 4px 8px #00000033;
+    filter: drop-shadow(.2rem .2rem .2rem #0000005b);
     cursor: pointer;
     transition: .250s;
     z-index: 10;
@@ -390,50 +439,4 @@ footer a:hover {
 
 #scrollToTopBtn:hover:active {
     background: linear-gradient(135deg, #009952, #008a99);
-    box-shadow: 0 6px 12px #0000004d;
-}
-
-.reviews {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.reviews h1 {
-    margin-bottom: 20px;
-}
-
-.review-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-}
-
-.review-card {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    border-radius: .7rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 300px;
-    transition: transform .2s;
-    color: #efefef;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.review-card:hover {
-    transform: scale(1.05);
-}
-
-.review-text {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
-
-.review-author {
-    font-weight: bold;
 }
