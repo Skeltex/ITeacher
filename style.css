@@ -2,13 +2,11 @@
 
 html {
   scroll-behavior: smooth;
-  /* Scrollbar settings */
   scrollbar-width: thin;
   background-image: url('images/background.svg');
 }
 
 /* The anchor will scroll a little lower */
-
 body,
 html {
   scroll-padding-top: 5rem;
@@ -37,7 +35,6 @@ h2 {
 }
 
 /*Smaller font for mobiles*/
-
 @media screen and (max-width: 770px) {
   h1 {
     font-size: x-large;
@@ -70,7 +67,6 @@ a:hover:active:not(.brand) {
 }
 
 /* Scroll to up button */
-
 #scrollToTopBtn {
   aspect-ratio: 1;
   position: fixed;
@@ -158,7 +154,6 @@ nav .brand img {
 }
 
 /* Replace with menu toggle for mobiles */
-
 @media (max-width: 770px) {
   nav {
     justify-content: space-between;
@@ -206,7 +201,6 @@ nav .brand img {
 }
 
 /* Adaptive nav elements size for mobiles */
-
 @media (max-width: 300px) {
   nav .brand {
     font-size: 9vw;
@@ -237,8 +231,8 @@ nav .brand img {
   color: #efefef;
 }
 
+/* Shift text to image */
 .image-text {
-  /* Shift text to image */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -278,7 +272,6 @@ nav .brand img {
 }
 
 /*Smaller font for mobiles*/
-
 @media screen and (max-width: 770px) {
   .image-text {
     font-size: x-large;
@@ -294,7 +287,6 @@ nav .brand img {
 }
 
 /*About us, advantages*/
-
 .articles {
   font-size: 20px;
   padding-top: 1rem;
@@ -308,7 +300,6 @@ nav .brand img {
 }
 
 /*Smaller font for mobiles*/
-
 @media screen and (max-width: 770px) {
   .articles {
     font-size: 18px;
@@ -423,7 +414,6 @@ nav .brand img {
   border-radius: 0.7rem;
   background-color: #f9f9f9;
   filter: drop-shadow(0.2rem 0.2rem 0.2rem #0000002d);
-  /* Убираем auto */
 }
 
 .feedback-form label {
@@ -463,7 +453,6 @@ nav .brand img {
 }
 
 /* Contacts */
-
 .contacts p a {
   text-decoration: underline;
   color: #1f1f1f;
@@ -496,7 +485,6 @@ footer a:hover {
 }
 
 /* Smaller font for mobiles */
-
 @media screen and (max-width: 770px) {
   footer {
     font-size: 15px;

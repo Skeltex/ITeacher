@@ -10,7 +10,6 @@ function scrollToTopBtnTrans() {
 }
 
 // Show button when page is scrolled down
-
 window.onscroll = function () {
   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
     scrollToTopBtnX = -5;
@@ -22,14 +21,12 @@ window.onscroll = function () {
 };
 
 // Up when mouse is on button
-
 function btnUp(x) {
   scrollToTopBtnY = -0.2;
   scrollToTopBtnTrans();
 }
 
 // Down when mouse isn't on button
-
 function btnDown(x) {
   scrollToTopBtnY = 0;
   scrollToTopBtnTrans();
@@ -44,7 +41,6 @@ mobileMenu.addEventListener('click', () => {
 });
 
 // Sign up for a course
-
 const teachers = {
   backendovSignUp: 'web-dev',
   kovalevaSignUp: 'python',
