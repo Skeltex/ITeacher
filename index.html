@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <title>Онлайн-школа ITeacher — обучение IT навыкам</title>
     <link rel="icon" href="images/logo.svg" />
     <link rel="stylesheet" href="style.css" />
@@ -10,15 +11,18 @@
   </head>
 
   <body>
-    <button id="scrollToTopBtn" onclick="scrollToTop()" onmouseover="btnUp(this)" onmouseout="btnDown(this)">↑</button>
+    <a href="#" id="scrollToTopBtn" onmouseover="btnUp(this)" onmouseout="btnDown(this)">↑</a>
     <nav>
-      <a href="#" class="brand"> <img src="images/logo.svg" alt="Logo" /> ITeacher </a>
-      <ul class="navlinks">
+      <a href="#" class="brand"> <img src="images/logo.svg" alt="Log	o" /> ITeacher </a>
+      <ul class="nav-links">
         <li><a href="#about-us">О нас</a></li>
         <li><a href="#advantages">Преимущества</a></li>
         <li><a href="#teachers">Преподаватели</a></li>
         <li><a href="#feedback">Связь</a></li>
       </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="bi bi-list"></i>
+      </div>
     </nav>
 
     <main>
@@ -74,42 +78,42 @@
             <img src="images/Backendov.jpg" alt="Ф.С.Бэкендов" />
             <h2>Ф.С.Бэкендов</h2>
             <p>Преподаватель frontend-разработки</p>
-            <a class="badge">Подробнее</a>
+            <a id="backendovSignUp" class="signup">Записаться</a>
           </article>
 
           <article class="teacher">
             <img src="images/Kovaleva.jpg" alt="К.Е.Ковалёва" />
             <h2>К.Е.Ковалёва</h2>
             <p>Преподаватель Python</p>
-            <a class="badge">Подробнее</a>
+            <a id="kovalevaSignUp" class="signup">Записаться</a>
           </article>
 
           <article class="teacher">
             <img src="images/Stepanov.jpg" alt="С.У.Степанов" />
             <h2>С.У.Степанов</h2>
             <p>Преподаватель Java</p>
-            <a class="badge">Подробнее</a>
+            <a id="stepanovSignUp" class="signup">Записаться</a>
           </article>
 
           <article class="teacher">
             <img src="images/Semenov.jpg" alt="C.А.Семёнов" />
             <h2>C.А.Семёнов</h2>
             <p>Преподаватель Data Science</p>
-            <a class="badge">Подробнее</a>
+            <a id="semenovSignUp" class="signup">Записаться</a>
           </article>
 
           <article class="teacher">
             <img src="images/Morozova.jpg" alt="М.Е.Морозова" />
             <h2>М.Е.Морозова</h2>
             <p>Преподаватель ИИ и машинного обучения</p>
-            <a class="badge">Подробнее</a>
+            <a id="morozovaSignUp" class="signup">Записаться</a>
           </article>
 
           <article class="teacher">
-            <img src="images/Romanov.jpg" alt="Х.Е.Романов" />
+            <img src="images/romanov.jpg" alt="Х.Е.Романов" />
             <h2>Х.Е.Романов</h2>
             <p>Преподаватель мобильной разработки</p>
-            <a class="badge">Подробнее</a>
+            <a id="romanovSignUp" class="signup">Записаться</a>
           </article>
         </div>
       </section>
@@ -142,20 +146,22 @@
         <p class="articles">Оставьте форму для обратной связи</p>
         <form class="feedback-form">
           <label for="name">Имя:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" required autocomplete />
 
           <label for="email">Почта:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required autocomplete />
 
           <label for="phone">Телефон:</label>
-          <input type="tel" id="phone" name="phone" required />
+          <input type="tel" id="phone" name="phone" required autocomplete />
 
           <label for="course">Выберите желаемый курс:</label>
           <select id="course" name="course" required>
-            <option value="web-development">Веб-разработка</option>
-            <option value="data-science">Наука о данных</option>
-            <option value="ai">Искусственный интеллект</option>
-            <option value="mobile-dev">Мобильная разработка</option>
+            <option id="web-dev" value="web-dev">Веб-разработка</option>
+            <option id="python" value="python">Python</option>
+            <option id="java" value="java">Java</option>
+            <option id="data-science" value="data-science">Наука о данных</option>
+            <option id="ai" value="ai">Искусственный интеллект</option>
+            <option id="mobile-dev" value="mobile-dev">Мобильная разработка</option>
           </select>
 
           <button type="submit">Отправить</button>

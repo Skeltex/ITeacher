@@ -14,15 +14,6 @@ html {
   scroll-padding-top: 5rem;
 }
 
-/* A more lower !!!!!!!!!!! delete when adding js to navbar */
-
-@media screen and (max-width: 770px) {
-  body,
-  html {
-    scroll-padding-top: 9rem;
-  }
-}
-
 @font-face {
   font-family: Roboto Mono;
   src: url(fonts/RobotoMono.ttf);
@@ -46,6 +37,7 @@ h2 {
   h1 {
     font-size: x-large;
   }
+
   h2 {
     font-size: 1.3rem;
   }
@@ -67,22 +59,71 @@ a {
   color: #1f1f1f;
 }
 
+/* Scroll to up button */
+
+#scrollToTopBtn {
+  aspect-ratio: 1;
+  position: fixed;
+  bottom: 1.5rem;
+  right: -4rem;
+  /* Hidden by default */
+  background: linear-gradient(135deg, #00cc6d, #00b8cc);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 1rem 1.5rem;
+  font-size: 18px;
+  filter: drop-shadow(0.2rem 0.2rem 0.2rem #0000005b);
+  cursor: pointer;
+  transition: 0.25s;
+  z-index: 10;
+}
+
+#scrollToTopBtn:hover:active {
+  background: linear-gradient(135deg, #009952, #008a99);
+}
+
 /* Navbar */
 
 nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  background-color: #4ca1af;
   padding: 0.6rem;
   position: sticky;
-  top: 0;
   z-index: 10;
   color: #efefef;
   background: linear-gradient(#1f1f1f, #161616);
   box-shadow: 0 0 0.5rem black;
   font-size: x-large;
+  top: 0px;
 }
 
-nav > .brand {
+.logo {
+  color: white;
+  font-size: 24px;
+}
+
+.nav-links {
+  color: #efefef;
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+  font-size: large;
+}
+
+.nav-links li a {
+  transition: all 250ms;
+  color: #e6e6e6;
+}
+
+.nav-links li a:hover {
+  transition: all 250ms;
+  color: #e66465;
+}
+
+nav .brand {
   display: flex;
   align-items: center;
   gap: 0.7em;
@@ -91,39 +132,84 @@ nav > .brand {
   color: #efefef;
 }
 
-nav > .brand > img {
+nav .brand img {
   width: 1em;
   filter: brightness(180%);
 }
 
-nav > .navlinks {
-  color: #efefef;
-  display: flex;
-  align-items: center;
-  gap: 4vw;
-  font-size: large;
+.bi-list {
+  transform: scale(120%);
 }
 
-nav > .navlinks a {
-  transition: all 250ms;
-  color: #e6e6e6;
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-nav > .navlinks a:hover {
-  transition: all 250ms;
-  color: #e66465;
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 3px 0;
 }
 
-/* When the screen is narrow, the links are displayed in a column, smaller font for mobiles */
+/* Replace with menu toggle for mobiles */
 
-@media screen and (max-width: 770px) {
-  nav > .navlinks {
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1rem;
+@media (max-width: 770px) {
+  nav {
+    justify-content: space-between;
   }
-  nav > .brand {
-    font-size: 1.5rem;
+  nav .brand {
+    margin-left: 5vw;
+  }
+  .bi-list {
+    margin-right: 5vw;
+  }
+  .nav-links.active {
+    transform: scale(100%);
+    visibility: visible;
+  }
+  .nav-links {
+    position: absolute;
+    top: 4.3rem;
+    right: 0.5rem;
+    transform: scale(100%);
+    transform-origin: 50% 0%;
+    background-color: #2b2b2b;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;
+    padding-inline: 1.5rem;
+    border-radius: 0.7rem;
+    transition: 0.25s;
+    height: 10rem;
+    filter: drop-shadow(0.2rem 0.2rem 0.2rem #0000009f);
+
+    transform: scale(0%);
+    visibility: hidden;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  /* Link is red only when clicked for mobile */
+  .nav-links li a:hover {
+    color: #e6e6e6;
+  }
+  .nav-links li a:active {
+    color: #e66465;
+  }
+}
+
+/* Adaptive nav elements size for mobiles */
+
+@media (max-width: 300px) {
+  nav .brand {
+    font-size: 9vw;
+  }
+  .bi-list {
+    font-size: 9vw;
   }
 }
 
@@ -190,9 +276,11 @@ nav > .navlinks a:hover {
   .image-text {
     font-size: x-large;
   }
+
   .image-text > .title {
     font-size: x-large;
   }
+
   .image-text > .subtitle {
     font-size: x-large;
   }
@@ -259,14 +347,15 @@ nav > .navlinks a:hover {
   }
 }
 
-.badge {
+.signup {
   padding: 0.5rem;
   background-color: #363636;
   color: #e6e6e6;
   filter: drop-shadow(0.1rem 0.1rem 0.15rem #0000009f);
-  width: 50%;
+  padding-inline: 1rem;
   text-align: center;
   border-radius: 0.7rem;
+  cursor: pointer;
 }
 
 /* Rewiews */
@@ -276,8 +365,10 @@ nav > .navlinks a:hover {
   text-align: center;
 }
 
-.reviews h1 {
-  margin-bottom: 2rem;
+@media screen and (max-width: 1800px) {
+  .reviews {
+    width: 60rem;
+  }
 }
 
 .review-container {
@@ -403,27 +494,4 @@ footer a:hover {
   footer {
     font-size: 15px;
   }
-}
-
-/* Scroll to up button */
-
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 1.5rem;
-  right: -4rem;
-  /* Hidden by default */
-  background: linear-gradient(135deg, #00cc6d, #00b8cc);
-  color: white;
-  border: none;
-  border-radius: 2rem;
-  padding: 15px 22.05px;
-  font-size: 18px;
-  filter: drop-shadow(0.2rem 0.2rem 0.2rem #0000005b);
-  cursor: pointer;
-  transition: 0.25s;
-  z-index: 10;
-}
-
-#scrollToTopBtn:hover:active {
-  background: linear-gradient(135deg, #009952, #008a99);
 }

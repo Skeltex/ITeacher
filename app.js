@@ -1,6 +1,6 @@
 // Scroll to up button
-const button = document.getElementById('scrollToTopBtn');
-const buttonStyle = button.style;
+
+const buttonStyle = document.getElementById('scrollToTopBtn').style;
 let buttonX = 0,
   buttonY = 0;
 
@@ -34,8 +34,30 @@ function btnDown(x) {
   buttonTrans();
 }
 
-// Scroll to top function
+//Nav Toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
 
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+mobileMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Sign up for a course
+
+var teachers = {
+  backendovSignUp: 'web-dev',
+  kovalevaSignUp: 'python',
+  stepanovSignUp: 'java',
+  semenovSignUp: 'data-science',
+  morozovaSignUp: 'ai',
+  romanovSignUp: 'mobile-dev',
+};
+
+for (teacher in teachers) {
+  const SignUp = document.getElementById(teacher);
+  const Form = document.getElementById(teachers[teacher]);
+  SignUp.addEventListener('click', () => {
+    Form.setAttribute('selected', '1');
+    feedback.scrollIntoView();
+  });
 }
