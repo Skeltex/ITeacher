@@ -25,6 +25,11 @@ body {
 
 h1 {
   font-size: xx-large;
+  color: #1f1f1f;
+}
+
+h2 {
+  color: #1f1f1f;
 }
 
 h2 {
@@ -49,14 +54,19 @@ section {
   margin: 2rem auto;
 }
 
-a:hover {
-  transition: all 250ms;
-  color: #e66465;
-}
-
 a {
   transition: all 250ms;
-  color: #1f1f1f;
+  color: #efefef;
+}
+
+a:hover {
+  transition: all 250ms;
+  color: var(--aHoverColor);
+}
+
+a:hover:active:not(.brand) {
+  transition: all 250ms;
+  color: var(--aHoverActiveColor);
 }
 
 /* Scroll to up button */
@@ -79,8 +89,11 @@ a {
   z-index: 10;
 }
 
+#scrollToTopBtn:hover {
+  background: var(--scrollToTopBtnHoverStyle);
+}
 #scrollToTopBtn:hover:active {
-  background: linear-gradient(135deg, #009952, #008a99);
+  background: var(--scrollToTopBtnHoverActiveStyle);
 }
 
 /* Navbar */
@@ -113,16 +126,6 @@ nav {
   font-size: large;
 }
 
-.nav-links li a {
-  transition: all 250ms;
-  color: #e6e6e6;
-}
-
-.nav-links li a:hover {
-  transition: all 250ms;
-  color: #e66465;
-}
-
 nav .brand {
   display: flex;
   align-items: center;
@@ -138,7 +141,7 @@ nav .brand img {
 }
 
 .bi-list {
-  transform: scale(120%);
+  transform: scale(120%) translate(0, 3px);
 }
 
 .menu-toggle {
@@ -270,6 +273,10 @@ nav .brand img {
   border-radius: 0.7rem;
 }
 
+.button a:not(:hover) {
+  color: #1f1f1f;
+}
+
 /*Smaller font for mobiles*/
 
 @media screen and (max-width: 770px) {
@@ -292,6 +299,7 @@ nav .brand img {
   font-size: 20px;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  color: #1f1f1f;
 }
 
 .advantages ol {
@@ -350,7 +358,6 @@ nav .brand img {
 .signup {
   padding: 0.5rem;
   background-color: #363636;
-  color: #e6e6e6;
   filter: drop-shadow(0.1rem 0.1rem 0.15rem #0000009f);
   padding-inline: 1rem;
   text-align: center;
@@ -459,6 +466,7 @@ nav .brand img {
 
 .contacts p a {
   text-decoration: underline;
+  color: #1f1f1f;
 }
 
 /* Footer */
@@ -476,7 +484,6 @@ footer {
 
 footer a {
   color: #fff;
-  text-decoration: none;
   transition: color 250ms;
 }
 
