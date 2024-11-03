@@ -32,7 +32,8 @@ function btnDown(x) {
   scrollToTopBtnTrans();
 }
 
-//Nav Toggle
+// Nav Toggle
+
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
@@ -41,6 +42,7 @@ mobileMenu.addEventListener('click', () => {
 });
 
 // Sign up for a course
+
 const teachers = {
   backendovSignUp: 'web-dev',
   kovalevaSignUp: 'python',
@@ -59,25 +61,44 @@ for (teacher in teachers) {
   });
 }
 
-//Fix hover style for mobiles
+// Fix hover style for mobiles
 
-a = document.querySelectorAll('a');
+function HoverActive(element, StyleVar, Hstyle, HAstyle) {
+  const ua = navigator.userAgent;
+  if (
+    /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua) ||
+    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)
+  ) {
+    element.setProperty('--' + StyleVar + 'HoverStyle', Hstyle);
+    element.setProperty('--' + StyleVar + 'HoverActiveStyle', HAstyle);
+  } else {
+    element.setProperty('--' + StyleVar + 'HoverStyle', HAstyle);
+    element.setProperty('--' + StyleVar + 'HoverActiveStyle', HAstyle);
+  }
+}
 
-const ua = navigator.userAgent;
-if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-  a.forEach((i) => i.style.setProperty('--aHoverColor', '#efefef'));
-  a.forEach((i) => i.style.setProperty('--aHoverActiveColor', '#e66465'));
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverStyle', 'linear-gradient(135deg, #00cc6d, #00b8cc)');
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverActiveStyle', 'linear-gradient(135deg, #009952, #008a99)');
-}
-if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-  a.forEach((i) => i.style.setProperty('--aHoverColor', '#efefef'));
-  a.forEach((i) => i.style.setProperty('--aHoverActiveColor', '#e66465'));
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverStyle', 'linear-gradient(135deg, #00cc6d, #00b8cc)');
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverActiveStyle', 'linear-gradient(135deg, #009952, #008a99)');
-} else {
-  a.forEach((i) => i.style.setProperty('--aHoverColor', '#e66465'));
-  a.forEach((i) => i.style.setProperty('--aHoverActiveColor', '#e66465'));
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverStyle', 'linear-gradient(135deg, #009952, #008a99)');
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverActiveStyle', 'linear-gradient(135deg, #009952, #008a99)');
-}
+// Scroll to top button
+HoverActive(
+  scrollToTopBtnStyle,
+  'scrollToTopBtn',
+  'linear-gradient(135deg, #00cc6d, #00b8cc)',
+  'linear-gradient(135deg, #009952, #008a99)',
+);
+
+// Liks
+const a = document.querySelectorAll('a');
+a.forEach((element) => HoverActive(element.style, 'a', '#efefef', '#e66465'));
+
+// Black Links
+imageTextButtonStyle = document.querySelector('.image-text .button a').style;
+emailStyle = document.querySelector('.contacts p a').style;
+HoverActive(imageTextButtonStyle, 'blackA', '#1f1f1f', '#e66465');
+HoverActive(emailStyle, 'blackA', '#1f1f1f', '#e66465');
+
+// Feedback form button
+feedbackBtnStyle = document.querySelector('.feedback-form button').style;
+HoverActive(feedbackBtnStyle, 'feedbackBtn', '#006aff', '#004ab3');
+
+// Footer Links
+footerA = document.querySelectorAll('footer a');
+footerA.forEach((element) => HoverActive(element.style, 'footerA', '#efefef', '#007bff'));
