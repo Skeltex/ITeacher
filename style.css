@@ -58,12 +58,12 @@ a {
 
 a:hover {
   transition: all 250ms;
-  color: var(--aHoverColor);
+  color: var(--aHoverStyle);
 }
 
 a:hover:active:not(.brand) {
   transition: all 250ms;
-  color: var(--aHoverActiveColor);
+  color: var(--aHoverActiveStyle);
 }
 
 /* Scroll to up button */
@@ -173,7 +173,7 @@ nav .brand img {
     top: 4.3rem;
     right: 0.5rem;
     transform: scale(100%);
-    transform-origin: 50% 0%;
+    transform-origin: 80% 0%;
     background-color: #2b2b2b;
     flex-direction: column;
     justify-content: center;
@@ -267,8 +267,16 @@ nav .brand img {
   border-radius: 0.7rem;
 }
 
-.button a:not(:hover) {
+.image-text .button a {
   color: #1f1f1f;
+}
+
+.image-text .button a:hover {
+  color: var(--blackAHoverStyle);
+}
+
+.image-text .button a:hover:active {
+  color: var(--blackAHoverActiveStyle);
 }
 
 /*Smaller font for mobiles*/
@@ -449,20 +457,33 @@ nav .brand img {
 }
 
 .feedback-form button:hover {
-  background-color: #004ab3;
+  background-color: var(--feedbackBtnHoverStyle);
+}
+
+.feedback-form button:hover:active {
+  background-color: var(--feedbackBtnHoverActiveStyle);
 }
 
 /* Contacts */
+
 .contacts p a {
   text-decoration: underline;
   color: #1f1f1f;
+}
+
+.contacts p a:hover {
+  color: var(--blackAHoverStyle);
+}
+
+.contacts p a:hover:active {
+  color: var(--blackAHoverActiveStyle);
 }
 
 /* Footer */
 
 footer {
   background-color: #1f1f1f;
-  color: #fff;
+  color: #efefef;
   padding: 1rem 2rem;
   text-align: left;
   bottom: 0;
@@ -472,7 +493,7 @@ footer {
 }
 
 footer a {
-  color: #fff;
+  color: #efefef;
   transition: color 250ms;
 }
 
@@ -481,7 +502,11 @@ footer p {
 }
 
 footer a:hover {
-  color: #007bff;
+  color: var(--footerAHoverStyle);
+}
+
+footer a:hover:active {
+  color: var(--footerAHoverActiveStyle);
 }
 
 /* Smaller font for mobiles */

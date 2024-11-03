@@ -32,7 +32,8 @@ function btnDown(x) {
   scrollToTopBtnTrans();
 }
 
-//Nav Toggle
+// Nav Toggle
+
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
@@ -41,6 +42,7 @@ mobileMenu.addEventListener('click', () => {
 });
 
 // Sign up for a course
+
 const teachers = {
   backendovSignUp: 'web-dev',
   kovalevaSignUp: 'python',
@@ -59,25 +61,44 @@ for (teacher in teachers) {
   });
 }
 
-//Fix hover style for mobiles
+// Fix hover style for mobiles
 
-a = document.querySelectorAll('a');
+function HoverActive(selector, StyleVar, Hstyle, HAstyle) {
+  const ua = navigator.userAgent;
+  const elements = document.querySelectorAll(selector);
+  if (
+    /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua) ||
+    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)
+  ) {
+    elements.forEach((e) => {
+      e.style.setProperty('--' + StyleVar + 'HoverStyle', Hstyle);
+      e.style.setProperty('--' + StyleVar + 'HoverActiveStyle', HAstyle);
+    });
+  } else {
+    elements.forEach((e) => {
+      e.style.setProperty('--' + StyleVar + 'HoverStyle', HAstyle);
+      e.style.setProperty('--' + StyleVar + 'HoverActiveStyle', HAstyle);
+    });
+  }
+}
 
-const ua = navigator.userAgent;
-if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-  a.forEach((i) => i.style.setProperty('--aHoverColor', '#efefef'));
-  a.forEach((i) => i.style.setProperty('--aHoverActiveColor', '#e66465'));
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverStyle', 'linear-gradient(135deg, #00cc6d, #00b8cc)');
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverActiveStyle', 'linear-gradient(135deg, #009952, #008a99)');
-}
-if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-  a.forEach((i) => i.style.setProperty('--aHoverColor', '#efefef'));
-  a.forEach((i) => i.style.setProperty('--aHoverActiveColor', '#e66465'));
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverStyle', 'linear-gradient(135deg, #00cc6d, #00b8cc)');
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverActiveStyle', 'linear-gradient(135deg, #009952, #008a99)');
-} else {
-  a.forEach((i) => i.style.setProperty('--aHoverColor', '#e66465'));
-  a.forEach((i) => i.style.setProperty('--aHoverActiveColor', '#e66465'));
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverStyle', 'linear-gradient(135deg, #009952, #008a99)');
-  scrollToTopBtnStyle.setProperty('--scrollToTopBtnHoverActiveStyle', 'linear-gradient(135deg, #009952, #008a99)');
-}
+// Scroll to top button
+HoverActive(
+  '#scrollToTopBtn',
+  'scrollToTopBtn',
+  'linear-gradient(135deg, #00cc6d, #00b8cc)',
+  'linear-gradient(135deg, #009952, #008a99)',
+);
+
+// Links
+HoverActive('a', 'a', '#efefef', '#e66465');
+
+// Black Links
+HoverActive('.image-text .button a', 'blackA', '#1f1f1f', '#e66465');
+HoverActive('.contacts p a', 'blackA', '#1f1f1f', '#e66465');
+
+// Feedback form button
+HoverActive('.feedback-form button', 'feedbackBtn', '#006aff', '#004ab3');
+
+// Footer Links
+HoverActive('footer a', 'footerA', '#efefef', '#007bff');
