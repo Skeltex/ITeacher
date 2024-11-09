@@ -1,3 +1,13 @@
+const ua = navigator.userAgent;
+if (
+  /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua) ||
+  /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)
+) {
+  ifMobile = true;
+} else {
+  ifMobile = false;
+}
+
 // Scroll to up button
 
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
@@ -19,27 +29,38 @@ window.onscroll = function () {
     scrollToTopBtnTrans();
   }
 };
+if (!ifMobile) {
+  // Up when mouse is on button
+  scrollToTopBtn.addEventListener('mouseover', () => {
+    scrollToTopBtnY = -0.2;
+    scrollToTopBtnTrans();
+  });
 
-// Up when mouse is on button
-function btnUp(x) {
-  scrollToTopBtnY = -0.2;
-  scrollToTopBtnTrans();
-}
-
-// Down when mouse isn't on button
-function btnDown(x) {
-  scrollToTopBtnY = 0;
-  scrollToTopBtnTrans();
+  // Down when mouse isn't on button
+  scrollToTopBtn.addEventListener('mouseout', () => {
+    scrollToTopBtnY = 0;
+    scrollToTopBtnTrans();
+  });
 }
 
 // Nav Toggle
 
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
+const navLink = document.querySelectorAll('.nav-links li');
 
 mobileMenu.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
+
+// Close menu after the link clicked
+navLink.forEach((e) =>
+  e.addEventListener('click', () => {
+    window.setTimeout(() => {
+      navLinks.classList.remove('active');
+    }, 250);
+  }),
+);
 
 // Sign up for a course
 
@@ -63,42 +84,38 @@ for (teacher in teachers) {
 
 // Fix hover style for mobiles
 
-function HoverActive(element, StyleVar, Hstyle, HAstyle) {
-  const ua = navigator.userAgent;
-  if (
-    /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua) ||
-    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)
-  ) {
-    element.setProperty('--' + StyleVar + 'HoverStyle', Hstyle);
-    element.setProperty('--' + StyleVar + 'HoverActiveStyle', HAstyle);
+function HoverActive(selector, StyleVar, Hstyle, HAstyle) {
+  const elements = document.querySelectorAll(selector);
+  if (ifMobile) {
+    elements.forEach((e) => {
+      e.style.setProperty('--' + StyleVar + 'HoverStyle', Hstyle);
+      e.style.setProperty('--' + StyleVar + 'HoverActiveStyle', HAstyle);
+    });
   } else {
-    element.setProperty('--' + StyleVar + 'HoverStyle', HAstyle);
-    element.setProperty('--' + StyleVar + 'HoverActiveStyle', HAstyle);
+    elements.forEach((e) => {
+      e.style.setProperty('--' + StyleVar + 'HoverStyle', HAstyle);
+      e.style.setProperty('--' + StyleVar + 'HoverActiveStyle', HAstyle);
+    });
   }
 }
 
 // Scroll to top button
 HoverActive(
-  scrollToTopBtnStyle,
+  '#scrollToTopBtn',
   'scrollToTopBtn',
   'linear-gradient(135deg, #00cc6d, #00b8cc)',
   'linear-gradient(135deg, #009952, #008a99)',
 );
 
-// Liks
-const a = document.querySelectorAll('a');
-a.forEach((element) => HoverActive(element.style, 'a', '#efefef', '#e66465'));
+// Links
+HoverActive('a', 'a', '#efefef', '#e66465');
 
 // Black Links
-imageTextButtonStyle = document.querySelector('.image-text .button a').style;
-emailStyle = document.querySelector('.contacts p a').style;
-HoverActive(imageTextButtonStyle, 'blackA', '#1f1f1f', '#e66465');
-HoverActive(emailStyle, 'blackA', '#1f1f1f', '#e66465');
+HoverActive('.image-text .button a', 'blackA', '#1f1f1f', '#e66465');
+HoverActive('.contacts p a', 'blackA', '#1f1f1f', '#e66465');
 
 // Feedback form button
-feedbackBtnStyle = document.querySelector('.feedback-form button').style;
-HoverActive(feedbackBtnStyle, 'feedbackBtn', '#006aff', '#004ab3');
+HoverActive('.feedback-form button', 'feedbackBtn', '#006aff', '#004ab3');
 
 // Footer Links
-footerA = document.querySelectorAll('footer a');
-footerA.forEach((element) => HoverActive(element.style, 'footerA', '#efefef', '#007bff'));
+HoverActive('footer a', 'footerA', '#efefef', '#007bff');
